@@ -1,0 +1,216 @@
+body
+{
+    font-family: arial, helvetica, sans-serif;
+    font-size: 14px;
+    background-color: #43577B;
+}
+
+table
+{
+    /*border-collapse: collapse;*/ 
+}
+
+table td, table th
+{
+    padding: 0; 
+}
+
+#layout-container
+{
+    text-align: center;
+}
+
+#layout
+{
+    width: 75%;
+    margin: 0 auto; 
+    text-align: left;
+    margin-top: 40px;
+    
+    height: 600px;
+    border: 1px solid gray;
+    background-color: #E3E5EB;
+}
+
+#header
+{
+    height: 5em;
+}
+
+#content 
+{
+    vertical-align: top;
+}
+
+#content-box
+{
+    padding-top: 40px;  
+}
+
+#header td 
+{
+    border-bottom: 1px solid gray;
+}
+
+#footer 
+{
+    height: 2em;
+    text-align: center;
+}
+
+#footer td 
+{
+    border-top: 1px solid gray;
+}
+
+/*
+#header, #footer
+{
+    background-color: Aqua;
+}
+*/
+
+#menu 
+{
+    list-style-type: none;
+}
+
+#menu li
+{
+    display: inline;
+    margin-left: 40px; 
+}
+
+#menu li:first-child 
+{
+    margin-left: 0;        
+}
+
+#list-container 
+{
+    width: 200px;
+    float: left;
+    margin-left: 20px;
+}
+
+#table-container 
+{
+    
+    float: left;
+    /*border: 1px solid red;*/
+}
+
+#employee-table 
+{
+    /*background-color: #EFEDDF;*/
+    
+}
+
+#employee-table td 
+{
+    min-width: 150px;
+}
+
+#employee-table tbody tr 
+{
+    /*border: 1px solid Black;*/
+    background-color: #EFEDDF;
+}
+
+#employee-table tr
+{
+    height: 1.5em;
+}
+
+#employee-table thead tr 
+{
+    text-align: center;
+    background-color: #E9D880;
+}
+
+#request-url-box 
+{
+    display: none;
+}
+
+#drop-list select 
+{
+    width: 120px;
+}
+
+#filter-caption 
+{
+    margin-left: 20px;
+    margin-bottom: 40px;
+}
+
+/*
+body
+{
+    font-size: 75%;
+    font-family: Verdana, Tahoma, Arial, "Helvetica Neue", Helvetica, Sans-Serif;
+    color: #232323;
+    background-color: #fff;
+}
+*/
+
+/* Styles for basic forms
+-----------------------------------------------------------*/
+
+fieldset 
+{
+    border:1px solid #ddd;
+    padding:0 1.4em 1.4em 1.4em;
+    margin:0 0 1.5em 0;
+}
+
+legend 
+{
+    font-size:1.2em;
+    font-weight: bold;
+}
+
+textarea 
+{
+    min-height: 75px;
+}
+
+.editor-label 
+{
+    margin: 1em 0 0 0;
+}
+
+.editor-field 
+{
+    margin:0.5em 0 0 0;
+}
+
+
+/* Styles for validation helpers
+-----------------------------------------------------------*/
+.field-validation-error
+{
+    color: #ff0000;
+}
+
+.field-validation-valid
+{
+    display: none;
+}
+
+.input-validation-error
+{
+    border: 1px solid #ff0000;
+    background-color: #ffeeee;
+}
+
+.validation-summary-errors
+{
+    font-weight: bold;
+    color: #ff0000;
+}
+
+.validation-summary-valid
+{
+    display: none;
+}

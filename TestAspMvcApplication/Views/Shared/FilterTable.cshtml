@@ -1,0 +1,36 @@
+﻿@model TestAspMvcApplication.Models.ViewModel
+
+<div id="request-url-box">@Model.RequestUrl</div>
+
+<div id="filter-caption">
+    <h2>@Model.FilterListName</h2>
+</div>
+<div id="list-container">
+    <div>
+    @Html.LabelFor(model => model.FilterListName, Model.FilterListName)
+    </div>
+    <div id="drop-list">
+    @Html.DropDownList("FilterListName", Model.SelectList, new { onchange = "onChange();" })
+    </div>
+</div>
+<div id="table-container">
+    <table id="employee-table">
+        <caption>Таблица персон</caption>
+        <thead>
+            <tr>
+                <td>Фамилия</td>
+                <td>Имя</td>
+                <td>Адрес</td>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model.Employees) {
+            <tr>
+                <td>@item.Surname</td>
+                <td>@item.Name</td>
+                <td>@item.Address</td>
+            </tr>    
+            }
+        </tbody>
+    </table>
+</div>

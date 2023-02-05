@@ -1,0 +1,52 @@
+﻿@model TestAspMvcApplication.Models.ViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<script type="text/javascript">
+
+    function getFilterListValue() {
+        return $("#FilterListName option:selected").text();
+    }
+
+    function setDataRowsToTable(dataRows) {
+        $('#employee-table tbody tr').remove();
+                
+        $.each(dataRows, function (i) {
+            html = "<tr>";
+            html += "<td>" + this.Surname + "</td>";
+            html += "<td>" + this.Name + "</td>";
+            html += "<td>" + this.Address + "</td>";
+            html += "</tr>";
+            $('#employee-table').append(html);
+        });
+    };
+
+    function onChange() {
+        requestUrl = $("#request-url-box").text();
+        updateTable(requestUrl);
+    };
+    
+    function updateTable(request_url) {
+        var filterValue = getFilterListValue();
+
+        $.ajax({
+            url: request_url,
+            data: { data: filterValue },
+            dataType: 'json',
+            traditional: true,
+            type: 'POST',
+            success: function (resultData) {
+                // get data which are already deserialized from JSON
+                setDataRowsToTable(resultData);
+            }
+        });
+    }
+
+</script>
+
+<div id="partial-box">
+    @Html.Partial("FilterTable", Model)
+</div>   

@@ -1,0 +1,65 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
+    <script src="@Url.Content("~/Scripts/jquery-1.4.4.min.js")" type="text/javascript"></script>
+</head>
+<body>
+
+    <script>
+
+        function onMainPageClick() {
+            renderPartial("/Home/GetMainPagePartial");
+        };
+
+        function onSecondPageClick() {
+            renderPartial("/Home/GetSecondPagePartial");
+        };
+
+        function renderPartial(request_url) {
+            $.get(
+                    request_url,
+                    null,
+                    function (data) {
+                        $("#partial-box").html(data)
+                    });
+        }
+
+    </script>
+
+   <div id="layout-container">
+        <table id="layout">
+            <tr id="header">
+                <td>
+                    <ul id="menu">
+                        @*
+                        <li>@Html.ActionLink("Главная", "#", "", null, new { onclick = "onMainPageClick(); return false;" })</li>
+                        <li>@Html.ActionLink("Вторая страница", "#", null, new { onclick = "onSecondPageClick(); return false;" })</li>
+                        *@
+                        
+                        <li>
+                            <a href="#" onclick="onMainPageClick(); return false;">Главная</a>
+                        </li>
+                        <li>
+                            <a href="#" onclick="onSecondPageClick(); return false;">Вторая страница</a>
+                        </li>
+
+                    </ul>
+                </td>
+            </tr>
+            <tr id="content">
+                <td id="content-box">
+                    @RenderBody()
+                </td>
+            </tr>
+            <tr id="footer">
+                <td>
+                    (c) Тестовое приложение ASP MVC
+                </td>
+            </tr>
+        </table>
+    </div>
+
+</body>
+</html>
